@@ -42,9 +42,13 @@ def write_to_file(file, name, route):
         f.write("(PPLID,UserId)\n")
         f.write("VALUES \n\n")
 
+        location, id = route.popitem()
+        f.write("-- " + location + "\n")
+        f.write("(" + str(id) + ",3992)")
         for location, id in route.items():
+            f.write(",\n\n")
             f.write("-- " + location + "\n")
-            f.write("(" + str(id) + ",3992)\n\n")
+            f.write("(" + str(id) + ",3992)")
 
 
 def get_file():
